@@ -1,0 +1,273 @@
+.wrapp{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.container{
+    flex: 0 1 1200px;
+    max-width: 1200px;
+    padding: 0 12px;
+    margin: 0px auto;
+    position: relative;
+    z-index: 3;
+}
+.container--CV{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: aliceblue;
+    padding: 20px 12px;
+}
+.container--about{
+    padding: 0 30px;
+}
+.fullscreen{
+    padding-top: 70px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background: url('../images/bg-paralax04.jpg') no-repeat center / cover;
+    position: relative;
+    display: flex;
+}
+.fullscreen--second{
+    background: url('../images/bg-paralax.jpg') no-repeat center / cover fixed;
+}
+
+.fullscreen--second::before{
+    opacity: 0;
+}
+.cv-name{
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 60px;
+}
+.cv-name span{
+    position: relative;
+}
+.cv-name span::after{
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: #fff;
+    bottom: -5px;
+    right: 0;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu{
+    display: flex;
+    flex: 0 1 600px;
+}
+.menu__link{
+    flex: 1 1 200px;
+    transition: .3s ease;
+    text-align: center;
+    padding: 0 5px;
+}
+.menu__item{
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+.menu__link:hover{
+    transform: scale(1.2);
+    transition: .3s ease all;
+}
+.cv__arrow-btn{
+    cursor: pointer;
+    align-self: center;
+    width: 50px;
+    height: 50px;
+}
+.cv__arrow-btn img{
+    max-width: 100%;
+}
+.cv-wrapp{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+.cv{
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cv-name{
+    margin-bottom: 20px;
+}
+.cv__arrow-btn{
+    animation: dragg 1s ease infinite alternate; 
+}
+.about{
+    padding: 50px 0;
+    background: url('../images/bg-paralax01.jpg') no-repeat center / cover;
+}
+.about-body{
+    display: flex;
+    margin: 0 -30px;
+}
+.about-body__column{
+    flex: 0 1 50%;
+    padding: 0 15px;
+}
+.about-img{
+    position: relative;
+    overflow: hidden;
+    padding: 0 0 100% 0;
+    border-radius: 12px;
+    z-index: 3;
+}
+.about-img img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    object-fit: cover;
+}
+.about-body__item{
+    position: relative;
+}
+.about-body__square{
+    position: absolute;
+    width: 100%;
+    height: 110%;
+    top: -30px;
+    left: -60px;
+    background: url('../images/bg-paralax04.jpg') no-repeat center / cover;
+    z-index: 2;
+    border-radius: 5px;
+    animation: rotates 10s ease infinite alternate;
+}
+.about-body__name{
+    font-size: 50px;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: #C96862 1px 0 10px;
+    margin-bottom: 30px;
+}
+.about-hobbies-body{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+}
+.about-hobbies-body__column{
+    flex: 0 1 50%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+.about-hobbies-body__item{
+    display: flex;
+    align-items: center;
+}
+.about-hobbies-body__img{
+    flex:0 0 70px;
+    height: 70px;
+    background-color: #C8566B;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+.about-hobbies-body__img img {
+    max-width: 100%;
+}
+.about-hobbies-body__txt{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 25px;
+    color: #fff;
+    text-shadow: 3px 0 10px #000;
+
+}
+
+
+@media(max-width:1060px){
+    .about-hobbies-body__column{
+        flex: 1 1 auto;
+    }
+    .about-body__column{
+        flex: 1 1 auto;
+    }
+    .about-body__column:nth-child(1){
+        flex: 0 1 50%;
+    }
+    .about-body__column:nth-child(2){
+        margin-top: 50px;
+    }
+    .about-body{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+   
+}
+
+@media(max-width:560px){
+    .cv-name{
+        font-size: 30px;
+        line-height: 37px;
+    }
+    .menu__item{
+        font-size: 14px;
+    }
+    .cv-name span::after{
+        display: none;
+    }
+}
+@media(max-width:320px){
+    .about-body__column:nth-child(1){
+        flex: 0 1 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+@keyframes dragg {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-15px);
+    }
+}
+@keyframes rotates {
+    0%{
+        transform: translateX(0) translateY(0);
+
+    }
+    50%{
+        transform: translateX(-12px) translateY(-10px);
+
+    }
+    100%{
+        transform: translateX(12px) translateY(10px);
+    }
+}
